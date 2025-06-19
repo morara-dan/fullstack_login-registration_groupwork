@@ -57,8 +57,10 @@ A simple demonstration of a full-stack user authentication application featuring
     *   Create and activate a Python virtual environment:
         ```bash
         python -m venv venv
+
         # On Windows:
-        # venv\Scripts\activate
+        venv\Scripts\activate
+        
         # On macOS/Linux:
         source venv/bin/activate
         ```
