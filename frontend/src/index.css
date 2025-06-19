@@ -1,0 +1,29 @@
+:root {
+  --dark-bg: #0d0f1c;
+  --primary-glow: #00f6ff;
+  --secondary-glow: #ff00c1;
+  --text-color: #f0f0f0;
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Share Tech Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--dark-bg);
+  background-image:
+    radial-gradient(at 20% 20%, hsla(212,100%,50%,0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, hsla(300,100%,50%,0.1) 0px, transparent 50%),
+    radial-gradient(at 20% 80%, hsla(180,100%,50%,0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, hsla(260,100%,50%,0.1) 0px, transparent 50%);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+}

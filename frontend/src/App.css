@@ -1,0 +1,261 @@
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 40px;
+  background: rgba(16, 23, 41, 0.4);
+  border: 1px solid var(--primary-glow);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 246, 255, 0.2), 0 0 20px rgba(0, 246, 255, 0.1) inset;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.5em;
+  color: var(--primary-glow);
+  text-shadow: 0 0 5px var(--primary-glow);
+  margin: 0 0 40px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-size: 1.2em;
+  padding: 10px 5px;
+  margin-bottom: 25px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Added autofill styling to prevent background changes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px var(--dark-bg) inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+    caret-color: var(--text-color);
+    border-bottom-color: var(--primary-glow);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+form input::placeholder {
+  color: rgba(240, 240, 240, 0.5);
+}
+
+form input:focus {
+  outline: none;
+  border-bottom-color: var(--primary-glow);
+  box-shadow: 0 5px 15px -10px var(--primary-glow);
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 2px solid var(--primary-glow);
+  color: var(--primary-glow);
+  font-family: var(--font-display);
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+}
+
+form button:hover, form button:focus {
+  outline: none;
+  background-color: var(--primary-glow);
+  color: var(--dark-bg);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.error-message {
+  color: var(--secondary-glow);
+  background-color: rgba(255, 0, 193, 0.1);
+  border: 1px solid var(--secondary-glow);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.success-message {
+  color: var(--primary-glow);
+  background-color: rgba(0, 246, 255, 0.1);
+  border: 1px solid var(--primary-glow);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.alternate-action {
+  margin-top: 25px;
+  font-size: 0.9em;
+}
+
+.alternate-action a {
+  color: var(--primary-glow);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.alternate-action a:hover {
+  text-decoration: underline;
+  color: var(--secondary-glow);
+}
+
+.main-nav {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-nav a, .main-nav button {
+  text-decoration: none;
+  color: var(--text-color);
+  background: rgba(16, 23, 41, 0.6);
+  padding: 8px 15px;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: var(--font-body);
+}
+
+.main-nav a:hover, .main-nav button:hover {
+  color: var(--dark-bg);
+  background-color: var(--primary-glow);
+  border-color: var(--primary-glow);
+}
+
+.content-card {
+  text-align: left;
+  line-height: 1.8;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(16, 23, 41, 0.4);
+  border: 1px solid var(--primary-glow);
+  border-radius: 8px;
+  margin: 20px auto;
+}
+
+.loading-container h2 {
+    font-size: 2em; /* Adjust for loading */
+    margin-bottom: 20px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em; /* Smaller heading on smaller screens */
+        margin-bottom: 30px;
+    }
+
+    .auth-container, .content-card {
+        padding: 30px; /* Reduced padding */
+        margin: 15px; /* Reduced margin */
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+        font-size: 1.1em; /* Slightly smaller input text */
+        padding: 8px 5px;
+        margin-bottom: 20px;
+    }
+
+    form button {
+        padding: 12px; /* Reduced button padding */
+        font-size: 1.2em;
+    }
+
+    .alternate-action {
+        margin-top: 20px;
+        font-size: 0.85em; /* Smaller help text */
+    }
+
+    .main-nav {
+        gap: 10px; /* Closer navigation links */
+        margin-bottom: 20px;
+    }
+
+    .main-nav a, .main-nav button {
+        padding: 6px 10px; /* Smaller nav buttons */
+        font-size: 0.9em;
+    }
+
+    .loading-container h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .auth-container, .content-card {
+        padding: 20px;
+        margin: 10px;
+    }
+
+     form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+        font-size: 1em;
+        padding: 6px 5px;
+        margin-bottom: 15px;
+    }
+
+     form button {
+        padding: 10px;
+        font-size: 1.1em;
+    }
+
+    .alternate-action {
+        margin-top: 15px;
+        font-size: 0.8em;
+    }
+
+     .main-nav {
+        gap: 8px;
+     }
+     .main-nav a, .main-nav button {
+         padding: 5px 8px;
+         font-size: 0.8em;
+     }
+    .loading-container h2 {
+        font-size: 1.5em;
+    }
+}
